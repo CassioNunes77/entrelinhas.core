@@ -1,0 +1,46 @@
+# Comandos para executar no terminal para fazer commit do Entrelinhas
+
+# 1. Navegar para o diretório do projeto
+cd /Users/Cassio/Documents/GitHub-CursorAI/entrelinhas.core
+
+# 2. Inicializar repositório Git
+git init
+
+# 3. Configurar usuário Git
+git config user.name "Cassio"
+git config user.email "cassio@entrelinhas.app"
+
+# 4. Adicionar todos os arquivos
+git add .
+
+# 5. Fazer commit inicial
+git commit -m "feat: MVP do Entrelinhas - App de socialização silenciosa
+
+- Implementa design system completo com paleta roxo suave
+- Cria funcionalidades principais: pergunta do dia, postagens, espaço de escuta, diário
+- Adiciona microinterações sutis com Framer Motion
+- Garante design responsivo mobile-first
+- Prepara estrutura monorepo para web, mobile e shared
+- Segue conceito de socialização silenciosa sem likes/pressão
+
+Funcionalidades implementadas:
+✅ Pergunta do Dia - Estimula conversas profundas
+✅ Postagens - Compartilhamento de pensamentos
+✅ Espaço de Escuta - Conexão através da escuta
+✅ Diário Pessoal - Reflexões e inspirações
+✅ Design Responsivo - Otimizado para mobile
+✅ Microinterações - Animações sutis com Framer Motion"
+
+# 6. Conectar ao GitHub (substitua SEU_USUARIO pelo seu username)
+git remote add origin https://github.com/SEU_USUARIO/entrelinhas.core.git
+
+# 7. Renomear branch para main
+git branch -M main
+
+# 8. Fazer push para o GitHub
+git push -u origin main
+
+# 9. Executar o projeto
+cd web
+npm install
+npm start
