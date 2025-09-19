@@ -1,0 +1,8 @@
+{
+  "name": "entrelinhas-build",
+  "version": "1.0.0",
+  "description": "Build estático do Entrelinhas",
+  "scripts": {
+    "build": "echo 'Build já está pronto!'"
+  }
+}

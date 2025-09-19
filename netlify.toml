@@ -1,11 +1,6 @@
 [build]
-  base = "web"
-  command = "npm install && npm run build"
-  publish = "web/build"
-
-[build.environment]
-  NODE_VERSION = "18"
-  NPM_FLAGS = "--prefix=web"
+  base = "web/build"
+  publish = "."
 
 [[redirects]]
   from = "/*"

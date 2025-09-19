@@ -1,47 +1,142 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#7E57C2" />
-    <meta
-      name="description"
-      content="Entrelinhas - Um lugar para conversar sobre o que importa. Sem likes. Sem pressão. Só você, suas palavras e quem estiver pronto para escutar."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/main.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrelinhas</title>
-  </head>
-  <body>
-    <div id="root">
-      <div class="container">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #7E57C2 0%, #5E35B1 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 600px;
+            padding: 2rem;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+        
+        .status {
+            font-size: 1rem;
+            opacity: 0.7;
+            margin-bottom: 2rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .feature h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .feature p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .subtitle { font-size: 1.1rem; }
+            .container { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
         <h1>Entrelinhas</h1>
         <p class="subtitle">Um lugar para conversar sobre o que importa</p>
         <p class="status">Site em construção...</p>
         
         <div class="features">
-          <div class="feature">
-            <h3>🎯 Pergunta do Dia</h3>
-            <p>Estimula conversas profundas e reflexões</p>
-          </div>
-          <div class="feature">
-            <h3>📝 Postagens</h3>
-            <p>Compartilhe seus pensamentos sem pressão</p>
-          </div>
-          <div class="feature">
-            <h3>👂 Espaço de Escuta</h3>
-            <p>Conexão através da escuta ativa</p>
-          </div>
-          <div class="feature">
-            <h3>📖 Diário Pessoal</h3>
-            <p>Reflexões e inspirações pessoais</p>
-          </div>
+            <div class="feature">
+                <h3>🎯 Pergunta do Dia</h3>
+                <p>Estimula conversas profundas e reflexões</p>
+            </div>
+            <div class="feature">
+                <h3>📝 Postagens</h3>
+                <p>Compartilhe seus pensamentos sem pressão</p>
+            </div>
+            <div class="feature">
+                <h3>👂 Espaço de Escuta</h3>
+                <p>Conexão através da escuta ativa</p>
+            </div>
+            <div class="feature">
+                <h3>📖 Diário Pessoal</h3>
+                <p>Reflexões e inspirações pessoais</p>
+            </div>
         </div>
-      </div>
     </div>
-    <script src="/static/js/main.js"></script>
-  </body>
+    
+    <script>
+        console.log('Entrelinhas carregado com sucesso!');
+        
+        // Adicionar animação suave ao carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.container');
+            if (container) {
+                container.style.opacity = '0';
+                container.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    container.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    container.style.opacity = '1';
+                    container.style.transform = 'translateY(0)';
+                }, 100);
+            }
+            
+            // Adicionar efeito de hover nos cards
+            const features = document.querySelectorAll('.feature');
+            features.forEach(feature => {
+                feature.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                feature.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
 </html>
