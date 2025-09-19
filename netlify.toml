@@ -1,0 +1,13 @@
+[build]
+  base = "web"
+  command = "npm run build"
+  publish = "web/build"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_FLAGS = "--prefix=web"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
